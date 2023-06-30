@@ -10,6 +10,10 @@ jobs:
     
     steps:
       - name: Get Timestamp Action
+        id: timestamp
         uses: nanzm/get-time-action@v2.0
         with:
           format: 'MM/DD/YYYY HH:mm a'
+          
+      - name: Print result
+        run: echo "${{ steps.timestamp.outputs.time }}"
