@@ -23,7 +23,7 @@ jobs:
     steps:        
       - name: Set timestamp
         id: timestamp
-        run: echo "time=$((Get-Date).ToString('MM/dd/yyyy hh:mm tt'))" >> "$GITHUB_OUTPUT"
+        run: echo "time=$((Get-Date).ToString('MM/dd/yyyy hh:mm tt'))" >> env:"$GITHUB_OUTPUT"
         
       - name: Print timestamp
         run: echo "${{ steps.timestamp.outputs.time }}"
