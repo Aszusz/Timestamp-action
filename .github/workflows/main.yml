@@ -8,18 +8,10 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     
-    steps:
-      - name: Get Timestamp Action
+    steps:        
+      - name: Set timestamp
         id: timestamp
-        uses: nanzm/get-time-action@v2.0
-        with:
-          format: 'MM/DD/YYYY HH:mm a'
-          
-      - name: Print result
-        run: echo "${{ steps.timestamp.outputs.time }}"
+        run: echo "{time}={date +'%m/%d/%Y %H:%M %p'}" >> $GITHUB_STATE
         
-      - name: Print own date %r
-        run: date +'%m/%d/%Y %H:%M %r'
-        
-      - name: Print own date %p
-        run: date +'%m/%d/%Y %H:%M %p'
+      - name: Print timestamp
+        run: echo ${ steps.timestamp.output.time }
