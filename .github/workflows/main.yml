@@ -17,3 +17,9 @@ jobs:
           
       - name: Print result
         run: echo "${{ steps.timestamp.outputs.time }}"
+        
+      - name: Print own date %r
+        run: date +'%m/%d/%Y %H:%M %r'
+        
+      - name: Print own date %p
+        run: date +'%m/%d/%Y %H:%M %p'
