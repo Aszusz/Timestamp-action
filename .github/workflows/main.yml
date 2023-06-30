@@ -1,0 +1,15 @@
+name: Timestam action test
+  
+on:    
+  workflow_dispatch:
+  
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Get Timestamp Action
+        uses: nanzm/get-time-action@v2.0
+        with:
+          format: 'MM/DD/YYYY HH:mm a'
