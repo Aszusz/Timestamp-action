@@ -11,7 +11,7 @@ jobs:
     steps:        
       - name: Set timestamp
         id: timestamp
-        run: echo "{time}={date +'%m/%d/%Y %H:%M %p'}" >> $GITHUB_STATE
+        run: echo "{time}=(date +'%m/%d/%Y %H:%M %p')" >> $GITHUB_STATE
         
       - name: Print timestamp
         run: echo ${{ steps.timestamp.outputs.time }}
