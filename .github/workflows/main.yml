@@ -11,7 +11,7 @@ jobs:
     steps:        
       - name: Set timestamp
         id: timestamp
-        run: echo "time=$(date +'%m/%d/%Y %h:%M %p')" >> $GITHUB_OUTPUT
+        run: echo "time=$(date +'%m/%d/%Y %I:%M %p')" >> $GITHUB_OUTPUT
         
       - name: Print timestamp
         run: echo "${{ steps.timestamp.outputs.time }}"
@@ -35,7 +35,7 @@ jobs:
     steps:        
       - name: Set timestamp
         id: timestamp
-        run: echo "time=$(date +'%m/%d/%Y %h:%M %p')" >> $GITHUB_OUTPUT
+        run: echo "time=$(date +'%m/%d/%Y %I:%M %p')" >> $GITHUB_OUTPUT
         
       - name: Print timestamp
         run: echo "${{ steps.timestamp.outputs.time }}"
